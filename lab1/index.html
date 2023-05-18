@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    p {
+      display: inline-block;
+      padding: 20px;
+    }
+  </style>
+  <body>
+    <p id="one">Hi</p>
+    <p id="two">Hi2</p>
+    <p id="three">Hi3</p>
+    <p id="four">Hi4</p>
+  </body>
+  <script>
+    console.log(document.querySelector("p"));
+    console.log(document.querySelector("#one"));
+    console.log(document.querySelector("#two"));
+    console.log(document.querySelector("#three"));
+    console.log(document.querySelector("#four"));
+    console.log(document.querySelectorAll("p"));
+    const colors = ["blue", "orange", "grey", "yellow"];
+    const fontfamily = [
+      "Courier New, Courier, monospace",
+      "Times New Roman, Times, serif",
+      "Arial, Helvetica, sans-serif",
+      "cursive",
+    ];
+    const borders = ["dotted", "double", "solid", "dashed"];
+    document.querySelectorAll("p").forEach((k, ind) => {
+      console.log(k.innerText);
+      k.style.color = (ind + 1) % 2 === 0 ? "green" : "red";
+      k.style.backgroundColor = colors[ind];
+      k.style.fontFamily = fontfamily[ind];
+      k.style.fontSize = `${ind + 1}rem`;
+      k.style.border = `4px ${borders[ind]} ${colors[3 - ind]}`;
+    });
+  </script>
+</html>
